@@ -3,6 +3,8 @@ defmodule ExBannerTest do
 
   import ExUnit.CaptureIO
 
+  doctest ExBanner
+
   test "render/2 uses the standard font by default" do
     assert ExBanner.render("Hi") == ExBanner.render("Hi", font: :standard)
   end

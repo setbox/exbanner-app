@@ -21,3 +21,6 @@ ex_banner-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# Local environment, may hold secrets such as HEX_API_KEY.
+.envrc

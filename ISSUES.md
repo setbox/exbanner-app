@@ -38,11 +38,11 @@ O Mix não tem API pública para saber qual task está rodando. A implementaçã
 - Situação (2026-10-06): resolvido. A auditoria completa (`audit.csv` com 333 fontes, resumo e os `.flf` livres) está na base de conhecimento do projeto, em `auditoria-fontes/`.
 - Fontes oficiais: FIGlet 2.2.5 em https://github.com/cmatsuoka/figlet (tag `2.2.5`) e MIT em https://github.com/patorjk/figlet.js (diretório `fonts/`).
 
-### 6. Documentação de API sem `@doc`
+### 6. Documentação de API
 
-O código segue a regra de não ter comentários nem `@doc`. Para um pacote Hex público, isso deixa o HexDocs só com o README e as specs das funções.
+O código seguia a regra de não ter comentários nem `@doc`, o que deixava o HexDocs só com o README e as specs.
 
-- Decisão em aberto: aceitar o README como documentação única ou abrir exceção para `@moduledoc`/`@doc` nas funções públicas de `ExBanner`.
+- Situação (2026-10-06): resolvido. Exceção aprovada para este projeto e registrada no `CLAUDE.md`: `@moduledoc`, `@doc` e `@typedoc` na API pública, em inglês, com exemplos executados como doctest.
 
 ## Fontes WTFPL (12)
 

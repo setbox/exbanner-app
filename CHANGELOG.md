@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- API documentation for `ExBanner` and `ExBanner.Error`, with examples checked as doctests.
+
 ## 0.1.0
 
 - Startup banner from `priv/banner.txt` with `$placeholder` values and `$[color]` styles.

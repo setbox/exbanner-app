@@ -1,4 +1,12 @@
 defmodule ExBanner.Error do
+  @moduledoc """
+  Raised by `ExBanner.render!/2` and `ExBanner.print/2` when text cannot be
+  rendered.
+
+  The `:reason` field holds the same term `ExBanner.render/2` returns in its
+  error tuple.
+  """
+
   defexception [:reason]
 
   @impl true
