@@ -1,0 +1,10 @@
+uppercase	80	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+lowercase	80	abcdefghijklmnopqrstuvwxyz
+digits	80	0123456789
+punctuation	80	!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+sentence	80	Hello, World! The quick brown fox jumps over the lazy dog.
+narrow	40	ExBanner renders FIGlet fonts
+multiline	80	Hello\nWorld
+spaces	80	  leading and   multiple   spaces  
+empty	80	
+tiny_width	1	Hi
