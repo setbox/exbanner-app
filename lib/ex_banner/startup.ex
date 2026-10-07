@@ -11,7 +11,7 @@ defmodule ExBanner.Startup do
 
   @spec run() :: :ok
   def run do
-    config = Application.get_all_env(:ex_banner)
+    config = Application.get_all_env(:exbanner)
     mode = Keyword.get(config, :mode, :console)
 
     with app when is_atom(app) and not is_nil(app) <- Keyword.get(config, :otp_app),
@@ -28,11 +28,11 @@ defmodule ExBanner.Startup do
 
   @spec show() :: :ok
   def show do
-    config = Application.get_all_env(:ex_banner)
+    config = Application.get_all_env(:exbanner)
 
     app =
       Keyword.get(config, :otp_app) ||
-        raise ArgumentError, "ExBanner requires config :ex_banner, otp_app: :my_app"
+        raise ArgumentError, "ExBanner requires config :exbanner, otp_app: :my_app"
 
     mode = if Keyword.get(config, :mode) == :log, do: :log, else: :console
     emit(build(app, config, mode), mode)
@@ -113,7 +113,7 @@ defmodule ExBanner.Startup do
       "description" => spec(app, :description),
       "elixir_version" => System.version(),
       "otp_release" => System.otp_release(),
-      "ex_banner_version" => spec(:ex_banner, :vsn),
+      "exbanner_version" => spec(:exbanner, :vsn),
       "node" => Atom.to_string(node()),
       "hostname" => hostname(),
       "release" => System.get_env("RELEASE_NAME", ""),

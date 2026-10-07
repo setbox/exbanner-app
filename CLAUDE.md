@@ -1,8 +1,8 @@
-# ex_banner
+# exbanner
 
 Lib Elixir pública (Hex) que imprime banner ASCII no start da aplicação e renderiza texto com fontes FIGlet.
 
-- Base de conhecimento: `~/obsidian/pessoal/dev/ex_banner/` (decisões em `decisoes.md`, detalhes em `implementacao.md`, publicação de versões em `novas-versoes.md`).
+- Base de conhecimento: `~/obsidian/setbox/produtos/exbanner/` (decisões em `decisoes.md`, detalhes em `implementacao.md`, publicação de versões em `novas-versoes.md`).
 - Pendências e fontes não incluídas: `ISSUES.md`.
 - Verificação: `mix precommit`.
 - Golden: `FIGLET=/caminho/figlet test/support/generate_golden.sh` regera as fixtures a partir do `figlet` 2.2.5.

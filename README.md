@@ -20,7 +20,7 @@ ASCII art banners for Elixir applications.
 ```elixir
 def deps do
   [
-    {:ex_banner, "~> 0.1"}
+    {:exbanner, "~> 0.1"}
   ]
 end
 ```
@@ -33,7 +33,7 @@ Tell ExBanner which application owns the banner:
 
 ```elixir
 # config/config.exs
-config :ex_banner, otp_app: :my_app
+config :exbanner, otp_app: :my_app
 ```
 
 Then create `priv/banner.txt` in your application:
@@ -65,7 +65,7 @@ A failure while printing the startup banner is logged as a warning and never sto
 | `$description` | Application description |
 | `$elixir_version` | `System.version()` |
 | `$otp_release` | `System.otp_release()` |
-| `$ex_banner_version` | ExBanner version |
+| `$exbanner_version` | ExBanner version |
 | `$node` | `node()` |
 | `$hostname` | Host name |
 | `$release` | `RELEASE_NAME`, empty outside a release |
@@ -76,7 +76,7 @@ Only known names are replaced. Any other `$` stays as written, so ASCII art with
 Add your own values with `:vars`, as a map, a keyword list or an `{module, function, args}` tuple that returns one. Your values win over the built-in ones.
 
 ```elixir
-config :ex_banner, otp_app: :my_app, vars: %{env: config_env()}
+config :exbanner, otp_app: :my_app, vars: %{env: config_env()}
 ```
 
 ### Colors
@@ -100,11 +100,11 @@ The startup banner also appears in mix tasks such as `mix test` and `mix ecto.mi
 
 ```elixir
 # only when the application runs
-config :ex_banner, mix_tasks: ["phx.server", "run"]
+config :exbanner, mix_tasks: ["phx.server", "run"]
 
 # or never in tests
 # config/test.exs
-config :ex_banner, mode: :off
+config :exbanner, mode: :off
 ```
 
 `iex -S mix` counts as `run`. Releases have no mix tasks and always print the banner.
@@ -183,12 +183,12 @@ Characters the font does not have are rendered without accents when possible (`Ã
 
 ### Your own fonts
 
-Popular fonts such as Crazy, Doom, Epic or ANSI Shadow are not bundled because their files carry no license that allows redistribution. The full list, with the reason for each font, is in [ISSUES.md](https://github.com/dakoctba/ex_banner/blob/master/ISSUES.md).
+Popular fonts such as Crazy, Doom, Epic or ANSI Shadow are not bundled because their files carry no license that allows redistribution. The full list, with the reason for each font, is in [ISSUES.md](https://github.com/setbox/exbanner-app/blob/master/ISSUES.md).
 
 You can still use them. Download the `.flf` file and point ExBanner to its directory:
 
 ```elixir
-config :ex_banner, font_paths: [Path.expand("../priv/fonts", __DIR__)]
+config :exbanner, font_paths: [Path.expand("../priv/fonts", __DIR__)]
 ```
 
 ```elixir

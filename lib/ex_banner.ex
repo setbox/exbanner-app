@@ -5,7 +5,7 @@ defmodule ExBanner do
   ExBanner does two things:
 
     * prints a startup banner from `priv/banner.txt` when your application
-      boots, configured under `config :ex_banner`. See the README for the
+      boots, configured under `config :exbanner`. See the README for the
       startup options, placeholders and colors.
     * renders text with FIGlet fonts, matching the output of `figlet` 2.2.5.
 

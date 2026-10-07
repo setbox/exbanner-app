@@ -1,12 +1,12 @@
 defmodule ExBanner.MixProject do
   use Mix.Project
 
-  @version "0.1.1"
-  @source_url "https://github.com/dakoctba/ex_banner"
+  @version "0.1.0"
+  @source_url "https://github.com/setbox/exbanner-app"
 
   def project do
     [
-      app: :ex_banner,
+      app: :exbanner,
       version: @version,
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,

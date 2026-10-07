@@ -39,8 +39,8 @@ defmodule ExBanner.FontTest do
 
     setup %{tmp_dir: tmp_dir} do
       File.cp!(@standard, Path.join(tmp_dir, "custom.flf"))
-      Application.put_env(:ex_banner, :font_paths, [tmp_dir])
-      on_exit(fn -> Application.delete_env(:ex_banner, :font_paths) end)
+      Application.put_env(:exbanner, :font_paths, [tmp_dir])
+      on_exit(fn -> Application.delete_env(:exbanner, :font_paths) end)
     end
 
     test "resolves atoms from font_paths", %{tmp_dir: tmp_dir} do

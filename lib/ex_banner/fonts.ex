@@ -50,7 +50,7 @@ defmodule ExBanner.Fonts do
   end
 
   defp find_in_paths(name) do
-    :ex_banner
+    :exbanner
     |> Application.get_env(:font_paths, [])
     |> Enum.map(&(&1 |> Path.expand() |> Path.join(name <> ".flf")))
     |> Enum.find(&File.regular?/1)
@@ -61,7 +61,7 @@ defmodule ExBanner.Fonts do
   end
 
   defp find_builtin(name) when name in @builtin_names,
-    do: {:ok, Application.app_dir(:ex_banner, Path.join(["priv", "fonts", name <> ".flf"]))}
+    do: {:ok, Application.app_dir(:exbanner, Path.join(["priv", "fonts", name <> ".flf"]))}
 
   defp find_builtin(_name), do: nil
 

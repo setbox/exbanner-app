@@ -1,6 +1,6 @@
 # Issues
 
-Pendências conhecidas do `ex_banner`: riscos de implementação e fontes FIGlet que não podem ser embutidas no pacote.
+Pendências conhecidas do `exbanner`: riscos de implementação e fontes FIGlet que não podem ser embutidas no pacote.
 
 ## Riscos
 
@@ -16,14 +16,14 @@ As 6 regras de smushing horizontal mais o smushing universal têm precedência s
 
 Crazy, Doom, Epic, ANSI Shadow, Graffiti, Star Wars e outras aparecem nos sites de geração de banner, mas não têm licença de redistribuição confirmada (ver tabela abaixo).
 
-- Mitigação: README explica como usar fonte própria via `config :ex_banner, font_paths: [...]`.
+- Mitigação: README explica como usar fonte própria via `config :exbanner, font_paths: [...]`.
 - Caminho para incluir: permissão escrita do autor, registrada aqui.
 
 ### 3. Detecção da mix task corrente
 
 O Mix não tem API pública para saber qual task está rodando. A implementação lê `:init.get_plain_arguments/0` e pega o argumento seguinte ao executável `mix`.
 
-- Situação (2026-10-06): implementado com `config :ex_banner, mix_tasks: :all | :none | [nomes]`, default `:all`. Validado em `mix run`, `mix test`, `iex -S mix` (vira `run`) e release (sem Mix, banner sempre aparece).
+- Situação (2026-10-06): implementado com `config :exbanner, mix_tasks: :all | :none | [nomes]`, default `:all`. Validado em `mix run`, `mix test`, `iex -S mix` (vira `run`) e release (sem Mix, banner sempre aparece).
 - Limite: `mix do compile + run` é visto como a task `do`. Aliases aparecem com o nome do alias.
 
 ### 4. Fontes com particularidades de arquivo
@@ -46,7 +46,7 @@ O código seguia a regra de não ter comentários nem `@doc`, o que deixava o He
 
 ## Fontes WTFPL (12)
 
-Licença permite redistribuição, mas WTFPL não é aprovada pela OSI e pode bloquear a adoção do pacote em auditorias corporativas. Ficam fora do `ex_banner`; candidatas a um pacote separado se houver demanda.
+Licença permite redistribuição, mas WTFPL não é aprovada pela OSI e pode bloquear a adoção do pacote em auditorias corporativas. Ficam fora do `exbanner`; candidatas a um pacote separado se houver demanda.
 
 | Fonte | Átomo | Autor | Origem |
 |---|---|---|---|

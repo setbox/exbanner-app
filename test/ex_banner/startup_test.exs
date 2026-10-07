@@ -16,14 +16,14 @@ defmodule ExBanner.StartupTest do
       Application.put_env(:elixir, :ansi_enabled, ansi_enabled)
 
       for key <- [:otp_app, :location, :mode, :mix_tasks, :vars] do
-        Application.delete_env(:ex_banner, key)
+        Application.delete_env(:exbanner, key)
       end
     end)
 
     banner = Path.join(tmp_dir, "banner.txt")
-    Application.put_env(:ex_banner, :otp_app, :ex_banner)
-    Application.put_env(:ex_banner, :location, banner)
-    Application.put_env(:ex_banner, :mix_tasks, :all)
+    Application.put_env(:exbanner, :otp_app, :exbanner)
+    Application.put_env(:exbanner, :location, banner)
+    Application.put_env(:exbanner, :mix_tasks, :all)
 
     %{banner: banner}
   end
@@ -32,49 +32,49 @@ defmodule ExBanner.StartupTest do
     File.write!(banner, "BANNER $app v$version | Elixir $elixir_version | $unknown\n")
 
     assert capture_io(&Startup.run/0) ==
-             "BANNER ex_banner v#{Application.spec(:ex_banner, :vsn)} | Elixir #{System.version()} | $unknown\n"
+             "BANNER exbanner v#{Application.spec(:exbanner, :vsn)} | Elixir #{System.version()} | $unknown\n"
   end
 
   test "stays silent without otp_app", %{banner: banner} do
     File.write!(banner, "BANNER\n")
-    Application.delete_env(:ex_banner, :otp_app)
+    Application.delete_env(:exbanner, :otp_app)
 
     assert capture_io(&Startup.run/0) == ""
   end
 
   test "stays silent when mode is off", %{banner: banner} do
     File.write!(banner, "BANNER\n")
-    Application.put_env(:ex_banner, :mode, :off)
+    Application.put_env(:exbanner, :mode, :off)
 
     assert capture_io(&Startup.run/0) == ""
   end
 
   test "logs the banner when mode is log", %{banner: banner} do
     File.write!(banner, "$[red]BANNER $app\n")
-    Application.put_env(:ex_banner, :mode, :log)
+    Application.put_env(:exbanner, :mode, :log)
 
     log = capture_log(fn -> assert capture_io(&Startup.run/0) == "" end)
 
-    assert log =~ "BANNER ex_banner"
+    assert log =~ "BANNER exbanner"
     refute log =~ "\e[31m"
   end
 
   test "stays silent when mix tasks are disabled", %{banner: banner} do
     File.write!(banner, "BANNER\n")
-    Application.put_env(:ex_banner, :mix_tasks, :none)
+    Application.put_env(:exbanner, :mix_tasks, :none)
 
     assert capture_io(&Startup.run/0) == ""
   end
 
   test "show/0 prints even when mode is off", %{banner: banner} do
     File.write!(banner, "BANNER\n")
-    Application.put_env(:ex_banner, :mode, :off)
+    Application.put_env(:exbanner, :mode, :off)
 
     assert capture_io(&ExBanner.show/0) == "BANNER\n"
   end
 
   test "show/0 requires otp_app" do
-    Application.delete_env(:ex_banner, :otp_app)
+    Application.delete_env(:exbanner, :otp_app)
 
     assert_raise ArgumentError, fn -> ExBanner.show() end
   end
@@ -82,7 +82,7 @@ defmodule ExBanner.StartupTest do
   test "sanitizes banner.txt and placeholder values", %{banner: banner} do
     File.write!(banner, "A\e]0;title\a\tB\r\n$evil|$count|$name\n")
 
-    Application.put_env(:ex_banner, :vars,
+    Application.put_env(:exbanner, :vars,
       evil: "x\nFAKE LOG LINE\e[2J",
       count: 3,
       name: :atom
@@ -93,27 +93,27 @@ defmodule ExBanner.StartupTest do
 
   test "user vars override builtin vars and accept an MFA", %{banner: banner} do
     File.write!(banner, "$app $env\n")
-    Application.put_env(:ex_banner, :vars, {Map, :new, [[{"app", "custom"}, {:env, "prod"}]]})
+    Application.put_env(:exbanner, :vars, {Map, :new, [[{"app", "custom"}, {:env, "prod"}]]})
 
     assert capture_io(&Startup.run/0) == "custom prod\n"
   end
 
   test "prints the default banner when the file is missing" do
-    Application.delete_env(:ex_banner, :location)
+    Application.delete_env(:exbanner, :location)
 
     output = capture_io(&Startup.run/0)
 
-    assert output =~ ExBanner.render!("ex_banner")
+    assert output =~ ExBanner.render!("exbanner")
 
     assert output =~
-             "ex_banner v#{Application.spec(:ex_banner, :vsn)} | Elixir #{System.version()}"
+             "exbanner v#{Application.spec(:exbanner, :vsn)} | Elixir #{System.version()}"
   end
 
   test "warns and falls back to the default banner when location is missing", %{
     banner: banner
   } do
     log =
-      capture_log(fn -> assert capture_io(&Startup.run/0) =~ ExBanner.render!("ex_banner") end)
+      capture_log(fn -> assert capture_io(&Startup.run/0) =~ ExBanner.render!("exbanner") end)
 
     assert log =~ "could not find #{banner}"
   end
@@ -127,8 +127,8 @@ defmodule ExBanner.StartupTest do
   end
 
   test "never crashes the host application" do
-    Application.put_env(:ex_banner, :otp_app, :not_an_app)
-    Application.delete_env(:ex_banner, :location)
+    Application.put_env(:exbanner, :otp_app, :not_an_app)
+    Application.delete_env(:exbanner, :location)
 
     log = capture_log(fn -> assert Startup.run() == :ok end)
 
