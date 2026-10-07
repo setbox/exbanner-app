@@ -1,0 +1,10 @@
+ x  nn r r n  rs  I l t  onts
+x xX  X   X XX   x x X  X    
+x .X  X   X XX   x x X  X    
+x ..  X   X XX   x x X  X    
+x ..  X   X XX   x . X  X    
+x ..  X   X XX   . . X  .    
+. ..  .   . X.   . . .  .    
+                             
+ExBanner renders FIGlet fonts
+                             

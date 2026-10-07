@@ -1,0 +1,36 @@
+HH   HH        lll lll               WW      WW               lll      dd !!! 
+HH   HH   eee  lll lll  oooo         WW      WW  oooo  rr rr  lll      dd !!! 
+HHHHHHH ee   e lll lll oo  oo        WW   W  WW oo  oo rrr  r lll  dddddd !!! 
+HH   HH eeeee  lll lll oo  oo  ,      WW WWW WW oo  oo rr     lll dd   dd     
+HH   HH  eeeee lll lll  oooo  ,,,      WW   WW   oooo  rr     lll  dddddd !!! 
+                              ,,                                              
+TTTTTTT hh                                iii        kk     
+  TTT   hh        eee       qqqqq uu   uu       cccc kk  kk 
+  TTT   hhhhhh  ee   e    qq   qq uu   uu iii cc     kkkkk  
+  TTT   hh   hh eeeee      qqqqqq uu   uu iii cc     kk kk  
+  TTT   hh   hh  eeeee         qq  uuuu u iii  ccccc kk  kk 
+                               qq                           
+bb                                           fff               
+bb      rr rr   oooo  ww      ww nn nnn     ff    oooo  xx  xx 
+bbbbbb  rrr  r oo  oo ww      ww nnn  nn    ffff oo  oo   xx   
+bb   bb rr     oo  oo  ww ww ww  nn   nn    ff   oo  oo   xx   
+bbbbbb  rr      oooo    ww  ww   nn   nn    ff    oooo  xx  xx 
+                                                               
+  jjj                                                                   
+      uu   uu mm mm mmmm  pp pp    sss      oooo  vv   vv   eee  rr rr  
+  jjj uu   uu mmm  mm  mm ppp  pp s        oo  oo  vv vv  ee   e rrr  r 
+  jjj uu   uu mmm  mm  mm pppppp   sss     oo  oo   vvv   eeeee  rr     
+  jjj  uuuu u mmm  mm  mm pp          s     oooo     v     eeeee rr     
+jjjj                      pp       sss                                  
+tt    hh                lll                       
+tt    hh        eee     lll   aa aa zzzzz yy   yy 
+tttt  hhhhhh  ee   e    lll  aa aaa   zz  yy   yy 
+tt    hh   hh eeeee     lll aa  aaa  zz    yyyyyy 
+ tttt hh   hh  eeeee    lll  aaa aa zzzzz      yy 
+                                           yyyyy  
+     dd                    
+     dd  oooo   gggggg     
+ dddddd oo  oo gg   gg     
+dd   dd oo  oo ggggggg ... 
+ dddddd  oooo       gg ... 
+                ggggg      

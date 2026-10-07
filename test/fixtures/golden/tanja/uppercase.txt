@@ -1,0 +1,32 @@
+  A)aa   B)bbbb     C)ccc  D)dddd   E)eeeeee F)ffffff   G)gggg H)    hh I)iiii 
+ A)  aa  B)   bb   C)   cc D)   dd  E)       F)        G)      H)    hh   I)   
+A)    aa B)bbbb   C)       D)    dd E)eeeee  F)fffff  G)  ggg  H)hhhhhh   I)   
+A)aaaaaa B)   bb  C)       D)    dd E)       F)       G)    gg H)    hh   I)   
+A)    aa B)    bb  C)   cc D)    dd E)       F)        G)   gg H)    hh   I)   
+A)    aa B)bbbbb    C)ccc  D)ddddd  E)eeeeee F)         G)ggg  H)    hh I)iiii 
+                                                                               
+                                                                               
+J)jjjjjj K)   kk  L)        M)mm mmm  N)n   nn  O)oooo  P)ppppp   Q)qqqq  
+    J)   K)  kk   L)       M)  mm  mm N)nn  nn O)    oo P)    pp Q)    qq 
+    J)   K)kkk    L)       M)  mm  mm N) nn nn O)    oo P)ppppp  Q)    qq 
+J)  jj   K)  kk   L)       M)  mm  mm N)  nnnn O)    oo P)       Q)  qq q 
+J)  jj   K)   kk  L)       M)      mm N)   nnn O)    oo P)       Q)   qq  
+ J)jj    K)    kk L)llllll M)      mm N)    nn  O)oooo  P)        Q)qqq q 
+                                                                          
+                                                                          
+R)rrrrr   S)ssss  T)tttttt U)    uu V)    vv W)      ww X)    xx Y)    yy 
+R)    rr S)    ss    T)    U)    uu V)    vv W)      ww  X)  xx   Y)  yy  
+R)  rrr   S)ss       T)    U)    uu V)    vv W)  ww  ww   X)xx     Y)yy   
+R) rr         S)     T)    U)    uu  V)  vv  W)  ww  ww   X)xx      Y)    
+R)   rr  S)    ss    T)    U)    uu   V)vv   W)  ww  ww  X)  xx     Y)    
+R)    rr  S)ssss     T)     U)uuuu     V)     W)ww www  X)    xx    Y)    
+                                                                          
+                                                                          
+Z)zzzzzz 
+      Z) 
+    Z)   
+   Z)    
+ Z)      
+Z)zzzzzz 
+         
+         

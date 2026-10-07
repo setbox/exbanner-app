@@ -1,0 +1,18 @@
+  AAA   BBBBB    CCCCC  DDDDD   EEEEEEE FFFFFFF   GGGG  HH   HH IIIII     JJJ 
+ AAAAA  BB   B  CC    C DD  DD  EE      FF       GG  GG HH   HH  III      JJJ 
+AA   AA BBBBBB  CC      DD   DD EEEEE   FFFF    GG      HHHHHHH  III      JJJ 
+AAAAAAA BB   BB CC    C DD   DD EE      FF      GG   GG HH   HH  III  JJ  JJJ 
+AA   AA BBBBBB   CCCCC  DDDDDD  EEEEEEE FF       GGGGGG HH   HH IIIII  JJJJJ  
+                                                                              
+KK  KK LL      MM    MM NN   NN  OOOOO  PPPPPP   QQQQQ  RRRRRR   SSSSS  
+KK KK  LL      MMM  MMM NNN  NN OO   OO PP   PP QQ   QQ RR   RR SS      
+KKKK   LL      MM MM MM NN N NN OO   OO PPPPPP  QQ   QQ RRRRRR   SSSSS  
+KK KK  LL      MM    MM NN  NNN OO   OO PP      QQ  QQ  RR  RR       SS 
+KK  KK LLLLLLL MM    MM NN   NN  OOOO0  PP       QQQQ Q RR   RR  SSSSS  
+                                                                        
+TTTTTTT UU   UU VV     VV WW      WW XX    XX YY   YY ZZZZZ 
+  TTT   UU   UU VV     VV WW      WW  XX  XX  YY   YY    ZZ 
+  TTT   UU   UU  VV   VV  WW   W  WW   XXXX    YYYYY    ZZ  
+  TTT   UU   UU   VV VV    WW WWW WW  XX  XX    YYY    ZZ   
+  TTT    UUUUU     VVV      WW   WW  XX    XX   YYY   ZZZZZ 
+                                                            

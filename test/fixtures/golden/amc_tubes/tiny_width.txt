@@ -1,0 +1,16 @@
+d    d 
+S    S 
+S    S 
+S sSSS 
+S    S 
+S    S 
+P    P 
+       
+d 
+S 
+S 
+S 
+S 
+S 
+P 
+  

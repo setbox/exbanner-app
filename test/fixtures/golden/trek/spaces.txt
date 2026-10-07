@@ -1,0 +1,24 @@
+            dBP    dBBBP dBBBBBb     dBBBBb  dBP dBBBBb  dBBBBb
+                              BB        dBP         dBP        
+          dBP    dBBP     dBP BB   dBP dBP dBP dBP dBP dBBBB   
+         dBP    dBP      dBP  BB  dBP dBP dBP dBP dBP dB' BB   
+        dBBBBP dBBBBP   dBBBBBBB dBBBBBP dBP dBP dBP dBBBBBB   
+                                                               
+  dBBBBBb     dBBBBb  dBBBBb
+       BB        dBP     dBP
+   dBP BB   dBP dBP dBP dBP 
+  dBP  BB  dBP dBP dBP dBP  
+ dBBBBBBB dBP dBP dBBBBBP   
+                            
+     dBBBBBBb  dBP dBP dBP dBBBBBBP dBP dBBBBBb  dBP    dBBBP 
+          dBP                               dB'               
+   dBPdBPdBP dBP dBP dBP    dBP   dBP   dBBBP' dBP    dBBP    
+  dBPdBPdBP dBP_dBP dBP    dBP   dBP   dBP    dBP    dBP      
+ dBPdBPdBP dBBBBBP dBBBBP dBP   dBP   dBP    dBBBBP dBBBBP    
+                                                              
+  .dBBBBP dBBBBBb dBBBBBb     dBBBP  dBBBP.dBBBBP        
+  BP          dB'      BB                 BP             
+  `BBBBb  dBBBP'   dBP BB   dBP    dBBP   `BBBBb         
+     dBP dBP      dBP  BB  dBP    dBP        dBP         
+dBBBBP' dBP      dBBBBBBB dBBBBP dBBBBP dBBBBP'          
+                                                         

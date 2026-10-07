@@ -1,0 +1,10 @@
+H llo, Worl   Th  qui k  rown  ox jumps ov r th  l zy  o .
+ X         X    X    .  X     X           X    X  X   X X 
+ X         X    X    .  .     X           X    X  X   X X 
+ X         X    X    .  .     X           X    X  .   X X 
+ X         X    X    .  .     X           X    X  .   X . 
+ X         X    X    .  .     .           X    X  .   X . 
+ .         X    .    .  .     .           .    .  .   X . 
+                                                          
+Hello, World! The quick brown fox jumps over the lazy dog.
+                                                          

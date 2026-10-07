@@ -26,12 +26,12 @@ defmodule ExBanner.FontTest do
     assert font.glyphs[?A] == [~c"x"]
   end
 
-  test "strips control characters from glyphs but keeps the hardblank" do
+  test "replaces control characters in glyphs with spaces but keeps the hardblank" do
     header = "flf2a\x7F 1 1 4 0 0\n"
     ascii = String.duplicate("\x7Fa\e[2J@\n", 95 + 7)
     {:ok, font} = Font.parse(header <> ascii)
 
-    assert font.glyphs[?A] == [[0x7F, ?a, ?[, ?2, ?J]]
+    assert font.glyphs[?A] == [[0x7F, ?a, ?\s, ?[, ?2, ?J]]
   end
 
   describe "user fonts" do

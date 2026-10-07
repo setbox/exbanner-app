@@ -1,0 +1,36 @@
+EEEEEEE        BBBBB                   
+EE      xx  xx BB   B    aa aa nn nnn  
+EEEEE     xx   BBBBBB   aa aaa nnn  nn 
+EE        xx   BB   BB aa  aaa nn   nn 
+EEEEEEE xx  xx BBBBBB   aaa aa nn   nn 
+                                       
+                      
+nn nnn    eee  rr rr  
+nnn  nn ee   e rrr  r 
+nn   nn eeeee  rr     
+nn   nn  eeeee rr     
+                      
+                           dd        
+rr rr    eee  nn nnn       dd   eee  
+rrr  r ee   e nnn  nn  dddddd ee   e 
+rr     eeeee  nn   nn dd   dd eeeee  
+rr      eeeee nn   nn  dddddd  eeeee 
+                                     
+             
+rr rr   sss  
+rrr  r s     
+rr      sss  
+rr         s 
+        sss  
+FFFFFFF IIIII   GGGG  lll        tt    
+FF       III   GG  GG lll   eee  tt    
+FFFF     III  GG      lll ee   e tttt  
+FF       III  GG   GG lll eeeee  tt    
+FF      IIIII  GGGGGG lll  eeeee  tttt 
+                                       
+ fff                tt          
+ff    oooo  nn nnn  tt     sss  
+ffff oo  oo nnn  nn tttt  s     
+ff   oo  oo nn   nn tt     sss  
+ff    oooo  nn   nn  tttt     s 
+                           sss  

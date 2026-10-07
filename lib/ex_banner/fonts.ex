@@ -3,12 +3,19 @@ defmodule ExBanner.Fonts do
 
   alias ExBanner.Font
 
-  @builtin ~w(ansi_compact banner big block bubble classy coder_mini digital font_font ivrit
-              lean linguaholic_mini_block linguaholic_neon linguaholic_rounded
-              linguaholic_shadow_3d mini mnemonic script shadow slant small small_script
-              small_shadow small_slant standard term)a
+  @extensions [".flf", ".tlf"]
 
-  @builtin_names Enum.map(@builtin, &Atom.to_string/1)
+  @fonts_dir Path.expand("../../priv/fonts", __DIR__)
+  @external_resource @fonts_dir
+
+  @builtin_files @fonts_dir
+                 |> Path.join("*.{flf,tlf}")
+                 |> Path.wildcard()
+                 |> Map.new(&{Path.rootname(Path.basename(&1)), Path.basename(&1)})
+
+  for {_name, file} <- @builtin_files, do: @external_resource(Path.join(@fonts_dir, file))
+
+  @builtin @builtin_files |> Map.keys() |> Enum.sort() |> Enum.map(&String.to_atom/1)
 
   @max_size 2_000_000
   @name_pattern ~r/\A[A-Za-z0-9_\-]+\z/
@@ -27,7 +34,7 @@ defmodule ExBanner.Fonts do
     do: resolve_name(Atom.to_string(font))
 
   defp resolve(font) when is_binary(font) do
-    if String.ends_with?(font, ".flf") or String.contains?(font, ["/", "\\"]) do
+    if String.ends_with?(font, @extensions) or String.contains?(font, ["/", "\\"]) do
       resolve_path(font)
     else
       resolve_name(font)
@@ -52,7 +59,9 @@ defmodule ExBanner.Fonts do
   defp find_in_paths(name) do
     :exbanner
     |> Application.get_env(:font_paths, [])
-    |> Enum.map(&(&1 |> Path.expand() |> Path.join(name <> ".flf")))
+    |> Enum.flat_map(fn dir ->
+      Enum.map(@extensions, &Path.join(Path.expand(dir), name <> &1))
+    end)
     |> Enum.find(&File.regular?/1)
     |> case do
       nil -> nil
@@ -60,10 +69,12 @@ defmodule ExBanner.Fonts do
     end
   end
 
-  defp find_builtin(name) when name in @builtin_names,
-    do: {:ok, Application.app_dir(:exbanner, Path.join(["priv", "fonts", name <> ".flf"]))}
-
-  defp find_builtin(_name), do: nil
+  defp find_builtin(name) do
+    case Map.fetch(@builtin_files, name) do
+      {:ok, file} -> {:ok, Application.app_dir(:exbanner, Path.join(["priv", "fonts", file]))}
+      :error -> nil
+    end
+  end
 
   defp cached(path) do
     key = {__MODULE__, path}

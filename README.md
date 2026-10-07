@@ -12,15 +12,15 @@ ASCII art banners for Elixir applications.
 
 - Prints a startup banner from `priv/banner.txt` when your application boots.
 - Renders text with FIGlet fonts: `ExBanner.print("Hello", font: :slant)`.
-- Output matches `figlet` 2.2.5 byte for byte, including smushing and word wrapping.
-- 26 bundled fonts, all with licenses that allow redistribution.
+- Output matches `figlet` 2.2.5 byte for byte, including smushing and word wrapping, in 329 of the 333 fonts; the other 4 have malformed glyphs where `figlet` itself misbehaves.
+- 333 bundled fonts, each credited to its author.
 
 ## Installation
 
 ```elixir
 def deps do
   [
-    {:exbanner, "~> 0.1"}
+    {:exbanner, "~> 0.2"}
   ]
 end
 ```
@@ -127,8 +127,8 @@ iex> ExBanner.render("Hello", font: :slant)
 iex> ExBanner.render!("Hello")
 " _   _      _ _       \n ..."
 
-iex> ExBanner.render("Hello", font: :crazy)
-{:error, {:unknown_font, "crazy"}}
+iex> ExBanner.render("Hello", font: :nope)
+{:error, {:unknown_font, "nope"}}
 ```
 
 | Function | Returns |
@@ -152,56 +152,31 @@ Characters the font does not have are rendered without accents when possible (`Ã
 
 ## Fonts
 
-| Font | License | Source |
-|---|---|---|
-| `:banner` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:big` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:block` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:bubble` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:digital` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:ivrit` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:lean` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:mini` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:mnemonic` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:script` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:shadow` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:slant` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:small` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:small_script` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:small_shadow` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:small_slant` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:standard` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:term` | BSD-3-Clause | FIGlet 2.2.5 |
-| `:ansi_compact` | MIT | Loic Cressot |
-| `:classy` | MIT | Loic Cressot |
-| `:coder_mini` | MIT | Loic Cressot |
-| `:font_font` | MIT | Oscar Cole |
-| `:linguaholic_mini_block` | MIT | Linguaholic |
-| `:linguaholic_neon` | MIT | Linguaholic |
-| `:linguaholic_rounded` | MIT | Linguaholic |
-| `:linguaholic_shadow_3d` | MIT | Linguaholic |
+ExBanner bundles 333 FIGlet and TOIlet fonts: the 18 fonts of the FIGlet 2.2.5 distribution and hundreds of fonts collected by the FIGlet community, including Crazy, Doom, Epic and ANSI Shadow. `ExBanner.fonts/0` lists them all, and the [site](https://setbox.github.io/exbanner-site/#fonts) shows each one rendered.
+
+Every font is credited to its author in [CREDITS.md](CREDITS.md), with the terms stated in its file. Many fonts were published without a license; if you are the author of a font and want it removed or credited differently, write to contato@setbox.com.br and it will be removed or updated in the next release.
+
+Font names are atoms. Names that start with a digit need quotes: `font: :"3_d"`.
 
 ### Your own fonts
 
-Popular fonts such as Crazy, Doom, Epic or ANSI Shadow are not bundled because their files carry no license that allows redistribution. The full list, with the reason for each font, is in [ISSUES.md](https://github.com/setbox/exbanner-app/blob/master/ISSUES.md).
-
-You can still use them. Download the `.flf` file and point ExBanner to its directory:
+Point ExBanner to a directory with `.flf` or `.tlf` files:
 
 ```elixir
 config :exbanner, font_paths: [Path.expand("../priv/fonts", __DIR__)]
 ```
 
 ```elixir
-ExBanner.print("Hello", font: :crazy)
-ExBanner.print("Hello", font: "/path/to/crazy.flf")
+ExBanner.print("Hello", font: :my_font)
+ExBanner.print("Hello", font: "/path/to/my_font.flf")
 ```
 
 Fonts in `:font_paths` take precedence over bundled fonts with the same name. Fonts are parsed on first use and cached with `:persistent_term`.
 
 ## Security
 
-ExBanner never evaluates code from `banner.txt` or from font files. Control characters, ANSI escape sequences and Unicode bidirectional overrides are removed from `banner.txt`, from placeholder values, from rendered text and from font glyphs, so a hostname or an environment variable cannot inject terminal sequences or fake log lines. Placeholder values are always a single line. Only ExBanner emits ANSI sequences, from a fixed list of colors and styles. Font and color names are never converted to atoms.
+ExBanner never evaluates code from `banner.txt` or from font files. Control characters, ANSI escape sequences and Unicode bidirectional overrides are removed from `banner.txt`, from placeholder values and from rendered text, and replaced by spaces in font glyphs, so a hostname or an environment variable cannot inject terminal sequences or fake log lines. Placeholder values are always a single line. Only ExBanner emits ANSI sequences, from a fixed list of colors and styles. Font and color names are never converted to atoms.
 
 ## License
 
-ExBanner is released under the MIT license. Bundled fonts keep their own licenses: see [LICENSE](LICENSE) and `priv/fonts/LICENSE.figlet`.
+ExBanner is released under the MIT license. Bundled fonts keep the terms of their authors: see [CREDITS.md](CREDITS.md), [LICENSE](LICENSE) and `priv/fonts/LICENSE.figlet`.

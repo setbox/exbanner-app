@@ -1,0 +1,32 @@
+      l)L                       d) ##                 
+       l)                       d)                    
+       l)  e)EEEEE a)AAAA   d)DDDD i) n)NNNN   g)GGG  
+       l)  e)EEEE   a)AAA  d)   DD i) n)   NN g)   GG 
+       l)  e)      a)   A  d)   DD i) n)   NN g)   GG 
+      l)LL  e)EEEE  a)AAAA  d)DDDD i) n)   NN  g)GGGG 
+                                                   GG 
+                                              g)GGGG  
+                     d) 
+                     d) 
+a)AAAA  n)NNNN   d)DDDD 
+ a)AAA  n)   NN d)   DD 
+a)   A  n)   NN d)   DD 
+ a)AAAA n)   NN  d)DDDD 
+                        
+                        
+                   l)L    t)   ##         l)L          
+                    l)  t)tTTT             l)          
+ m)MM MMM  u)   UU  l)    t)   i) p)PPPP   l)  e)EEEEE 
+m)  MM  MM u)   UU  l)    t)   i) p)   PP  l)  e)EEEE  
+m)  MM  MM u)   UU  l)    t)   i) p)   PP  l)  e)      
+m)      MM  u)UUU  l)LL   t)T  i) p)PPPP  l)LL  e)EEEE 
+                                  p)                   
+                                  p)                   
+                                                      
+                                                      
+ s)SSSS p)PPPP  a)AAAA   c)CCCC e)EEEEE  s)SSSS       
+s)SSSS  p)   PP  a)AAA  c)      e)EEEE  s)SSSS        
+     s) p)   PP a)   A  c)      e)           s)       
+s)SSSS  p)PPPP   a)AAAA  c)CCCC  e)EEEE s)SSSS        
+        p)                                            
+        p)                                            

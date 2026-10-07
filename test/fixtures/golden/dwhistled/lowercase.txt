@@ -1,0 +1,10 @@
+       hijklmnopqrstuvwxyz
+XX.XXXX                   
+X..XXXX                   
+...XXXX                   
+...XXX.                   
+...XX..                   
+...X...                   
+                          
+abcdefghijklmnopqrstuvwxyz
+                          

@@ -1,0 +1,10 @@
+       HIJKLMNOPQRSTUVWXYZ
+xx.xxxx                   
+x..xxxx                   
+...xxxx                   
+...xxx.                   
+...xx..                   
+...x...                   
+                          
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                          

@@ -1,7 +1,7 @@
 defmodule ExBanner.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.2.0"
   @source_url "https://github.com/setbox/exbanner-app"
 
   def project do
@@ -46,9 +46,9 @@ defmodule ExBanner.MixProject do
 
   defp package do
     [
-      licenses: ["MIT", "BSD-3-Clause"],
+      licenses: ["MIT", "BSD-3-Clause", "WTFPL"],
       links: %{"GitHub" => @source_url},
-      files: ~w(lib priv mix.exs README.md LICENSE CHANGELOG.md)
+      files: ~w(lib priv mix.exs README.md LICENSE CHANGELOG.md CREDITS.md)
     ]
   end
 
@@ -56,7 +56,7 @@ defmodule ExBanner.MixProject do
     [
       main: "readme",
       source_ref: "v#{@version}",
-      extras: ["README.md", "CHANGELOG.md", "LICENSE"]
+      extras: ["README.md", "CREDITS.md", "CHANGELOG.md", "LICENSE"]
     ]
   end
 end

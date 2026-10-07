@@ -61,8 +61,8 @@ defmodule ExBanner do
       iex> ExBanner.render("Hi", font: :term)
       {:ok, "Hi\\n"}
 
-      iex> ExBanner.render("Hi", font: :crazy)
-      {:error, {:unknown_font, "crazy"}}
+      iex> ExBanner.render("Hi", font: :nope)
+      {:error, {:unknown_font, "nope"}}
 
       iex> ExBanner.render("Hi", width: 0)
       {:error, {:invalid_width, 0}}

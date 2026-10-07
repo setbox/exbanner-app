@@ -1,0 +1,18 @@
+            L     EEEEE   A   DDDD  III N   N  GGG          A   N   N DDDD  
+            L     E      A A  D   D  I  NN  N G            A A  NN  N D   D 
+            L     EEEE  AAAAA D   D  I  N N N G GG        AAAAA N N N D   D 
+            L     E     A   A D   D  I  N  NN G   G       A   A N  NN D   D 
+            LLLLL EEEEE A   A DDDD  III N   N  GGG        A   A N   N DDDD  
+                                                                            
+M   M U   U L     TTTTT III PPPP  L     EEEEE 
+MM MM U   U L       T    I  P   P L     E     
+M M M U   U L       T    I  PPPP  L     EEEE  
+M   M U   U L       T    I  P     L     E     
+M   M  UUU  LLLLL   T   III P     LLLLL EEEEE 
+                                              
+ SSSS PPPP    A    CCC  EEEEE  SSSS             
+S     P   P  A A  C   C E     S                 
+ SSS  PPPP  AAAAA C     EEEE   SSS              
+    S P     A   A C   C E         S             
+SSSS  P     A   A  CCC  EEEEE SSSS              
+                                                

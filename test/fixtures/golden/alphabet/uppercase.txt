@@ -1,0 +1,14 @@
+ AA  BBBB   CCC DDD  EEEE FFFF  GGG  H  H III     J K  K L    M   M N   N 
+A  A B   B C    D  D E    F    G     H  H  I      J K K  L    MM MM NN  N 
+AAAA BBBB  C    D  D EEE  FFF  G  GG HHHH  I      J KK   L    M M M N N N 
+A  A B   B C    D  D E    F    G   G H  H  I  J   J K K  L    M   M N  NN 
+A  A BBBB   CCC DDD  EEEE F     GGG  H  H III  JJJ  K  K LLLL M   M N   N 
+                                                                          
+                                                                          
+ OOO  PPPP   QQQ   RRRR   SSS  TTTTTT U   U V     V W     W X   X Y   Y ZZZZZ 
+O   O P   P Q   Q  R   R S       TT   U   U V     V W     W  X X   Y Y     Z  
+O   O PPPP  Q   Q  RRRR   SSS    TT   U   U  V   V  W  W  W   X     Y     Z   
+O   O P     Q  QQ  R R       S   TT   U   U   V V    W W W   X X    Y    Z    
+ OOO  P      QQQQ  R  RR SSSS    TT    UUU     V      W W   X   X   Y   ZZZZZ 
+                 Q                                                            
+                                                                              

@@ -1,0 +1,10 @@
+  l   in   n    multipl    sp   s  
+   XXX  X X X          X     X.X   
+   XXX  X X X          X     X.X   
+   X.X  X . X          X     ..X   
+   X.X  . . X          X     ..X   
+   X.X  . . X          X     ..X   
+   ..X  . . X          .     ...   
+                                   
+  leading and   multiple   spaces  
+                                   

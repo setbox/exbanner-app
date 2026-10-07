@@ -1,0 +1,24 @@
+      lll                     dd iii                 
+      lll   eee    aa aa      dd     nn nnn   gggggg 
+      lll ee   e  aa aaa  dddddd iii nnn  nn gg   gg 
+      lll eeeee  aa  aaa dd   dd iii nn   nn ggggggg 
+      lll  eeeee  aaa aa  dddddd iii nn   nn      gg 
+                                              ggggg  
+                     dd 
+  aa aa nn nnn       dd 
+ aa aaa nnn  nn  dddddd 
+aa  aaa nn   nn dd   dd 
+ aaa aa nn   nn  dddddd 
+                        
+                    lll tt    iii         lll        
+mm mm mmmm  uu   uu lll tt        pp pp   lll   eee  
+mmm  mm  mm uu   uu lll tttt  iii ppp  pp lll ee   e 
+mmm  mm  mm uu   uu lll tt    iii pppppp  lll eeeee  
+mmm  mm  mm  uuuu u lll  tttt iii pp      lll  eeeee 
+                                  pp                 
+                                                
+ sss  pp pp     aa aa   cccc   eee   sss        
+s     ppp  pp  aa aaa cc     ee   e s           
+ sss  pppppp  aa  aaa cc     eeeee   sss        
+    s pp       aaa aa  ccccc  eeeee     s       
+ sss  pp                             sss        

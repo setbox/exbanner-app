@@ -1,0 +1,30 @@
+ .S    S.   
+.SS    SS.  
+S%S    S%S  
+S%S    S%S  
+S%S SSSS%S  
+S&S  SSS&S  
+S&S    S&S  
+S&S    S&S  
+S*S    S*S  
+S*S    S*S  
+S*S    S*S  
+SSS    S*S  
+       SP   
+       Y    
+            
+ .S  
+.SS  
+S%S  
+S%S  
+S&S  
+S&S  
+S&S  
+S&S  
+S*S  
+S*S  
+S*S  
+S*S  
+SP   
+Y    
+     

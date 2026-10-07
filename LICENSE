@@ -20,7 +20,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-The FIGlet fonts in priv/fonts are distributed under their own licenses: the
-fonts from the FIGlet 2.2.5 distribution under the BSD 3-Clause license in
-priv/fonts/LICENSE.figlet, and the remaining fonts under the MIT license stated
-in each font file header.
+The fonts in priv/fonts are not covered by this license. They keep the terms
+of their authors, listed font by font in CREDITS.md: the fonts from the FIGlet
+2.2.5 distribution are under the BSD 3-Clause license in
+priv/fonts/LICENSE.figlet, some fonts state the MIT or WTFPL license in their
+header, and many were published without a license. Any font is removed on
+request of its author.

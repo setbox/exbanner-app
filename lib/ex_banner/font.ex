@@ -22,6 +22,7 @@ defmodule ExBanner.Font do
   def parse(data) when is_binary(data) do
     case data |> strip_bom() |> split_lines() do
       ["flf2" <> header | lines] -> parse_header(header, lines)
+      ["tlf2" <> header | lines] -> parse_header(header, lines)
       _ -> {:error, :not_a_figlet_font}
     end
   end
@@ -36,9 +37,9 @@ defmodule ExBanner.Font do
   end
 
   defp parse_header(header, lines) do
-    with <<_variant::utf8, hardblank::utf8, rest::binary>> <- header,
+    with [_variant, hardblank | rest] <- decode(header),
          [height, _baseline, _max_length, old_layout, comment_lines | optional] <-
-           header_integers(rest) do
+           header_integers(List.to_string(rest)) do
       height = max(height, 1)
       right_to_left = if Enum.at(optional, 0) == 1, do: 1, else: 0
       layout = full_layout(old_layout, Enum.at(optional, 1))
@@ -145,7 +146,7 @@ defmodule ExBanner.Font do
     |> Enum.drop_while(&(&1 in @whitespace))
     |> drop_endmarks()
     |> Enum.reverse()
-    |> Enum.reject(&(&1 != hardblank and Sanitizer.control?(&1)))
+    |> Enum.map(&if(&1 != hardblank and Sanitizer.control?(&1), do: ?\s, else: &1))
   end
 
   defp decode(line) do

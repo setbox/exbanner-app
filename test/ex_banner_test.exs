@@ -10,7 +10,7 @@ defmodule ExBannerTest do
   end
 
   test "render/2 returns an error for an unknown font" do
-    assert ExBanner.render("Hi", font: :crazy) == {:error, {:unknown_font, "crazy"}}
+    assert ExBanner.render("Hi", font: :nope) == {:error, {:unknown_font, "nope"}}
   end
 
   test "render/2 rejects font names that could escape the font directories" do
@@ -24,8 +24,8 @@ defmodule ExBannerTest do
   end
 
   test "render!/2 raises ExBanner.Error" do
-    assert_raise ExBanner.Error, "unknown font: crazy", fn ->
-      ExBanner.render!("Hi", font: :crazy)
+    assert_raise ExBanner.Error, "unknown font: nope", fn ->
+      ExBanner.render!("Hi", font: :nope)
     end
   end
 
@@ -62,13 +62,13 @@ defmodule ExBannerTest do
   end
 
   test "print/2 raises on unknown font" do
-    assert_raise ExBanner.Error, fn -> ExBanner.print("Hi", font: :crazy) end
+    assert_raise ExBanner.Error, fn -> ExBanner.print("Hi", font: :nope) end
   end
 
   test "fonts/0 lists the bundled fonts" do
     fonts = ExBanner.fonts()
 
-    assert length(fonts) == 26
+    assert length(fonts) == 333
     assert :standard in fonts
 
     for font <- fonts do
