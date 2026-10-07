@@ -169,7 +169,7 @@ It pauses every 50 fonts (`:page_size`), filters by name with `:match` or takes 
 
 ## Fonts
 
-ExBanner bundles 333 FIGlet and TOIlet fonts: the 18 fonts of the FIGlet 2.2.5 distribution and hundreds of fonts collected by the FIGlet community, including Crazy, Doom, Epic and ANSI Shadow. `ExBanner.fonts/0` lists them all, and the [site](https://setbox.github.io/exbanner-site/#fonts) shows each one rendered.
+ExBanner bundles 333 FIGlet and TOIlet fonts: the 18 fonts of the FIGlet 2.2.5 distribution and hundreds of fonts collected by the FIGlet community, including Crazy, Doom, Epic and ANSI Shadow. `ExBanner.fonts/0` lists them all, and the [site](https://setbox.com.br/oss/exbanner/#fonts) shows each one rendered.
 
 Every font is credited to its author in [CREDITS.md](CREDITS.md), with the terms stated in its file. Many fonts were published without a license; if you are the author of a font and want it removed or credited differently, write to contato@setbox.com.br and it will be removed or updated in the next release.
 

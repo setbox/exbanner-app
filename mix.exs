@@ -3,6 +3,7 @@ defmodule ExBanner.MixProject do
 
   @version "0.3.0"
   @source_url "https://github.com/setbox/exbanner-app"
+  @homepage_url "https://setbox.com.br/oss/exbanner/"
 
   def project do
     [
@@ -16,7 +17,8 @@ defmodule ExBanner.MixProject do
         "ASCII art banners for Elixir applications: startup banner from priv/banner.txt and FIGlet text rendering.",
       package: package(),
       docs: docs(),
-      source_url: @source_url
+      source_url: @source_url,
+      homepage_url: @homepage_url
     ]
   end
 
@@ -47,7 +49,7 @@ defmodule ExBanner.MixProject do
   defp package do
     [
       licenses: ["MIT", "BSD-3-Clause", "WTFPL"],
-      links: %{"GitHub" => @source_url},
+      links: %{"GitHub" => @source_url, "Website" => @homepage_url},
       files: ~w(lib priv mix.exs README.md LICENSE CHANGELOG.md CREDITS.md)
     ]
   end
