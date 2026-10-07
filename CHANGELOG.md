@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0
+
+- `ExBanner.showcase/2` prints a text in every bundled font, page by page, to help choose one. Filters with `:fonts` and `:match`; pauses every `:page_size` fonts.
+- Fonts read by `showcase/2` are not kept in the font cache, so a showcase does not leave all 333 fonts in memory.
+
 ## 0.2.0
 
 - 333 bundled fonts: every font from the FIGlet 2.2.5 distribution and the FIGlet community collections, including Crazy, Doom, Epic and ANSI Shadow. Each font is credited to its author in `CREDITS.md`, and any font is removed on request of its author.

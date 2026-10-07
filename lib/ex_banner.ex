@@ -40,6 +40,15 @@ defmodule ExBanner do
   @type print_option ::
           render_option() | {:color, atom()} | {:device, IO.device()}
 
+  @typedoc "Options accepted by `showcase/2`."
+  @type showcase_option ::
+          {:fonts, [font()]}
+          | {:match, String.t()}
+          | {:page_size, pos_integer() | :infinity}
+          | {:width, pos_integer()}
+          | {:color, atom()}
+          | {:device, IO.device()}
+
   @doc """
   Renders `text` as ASCII art.
 
@@ -123,8 +132,48 @@ defmodule ExBanner do
 
     text
     |> render!(opts)
-    |> colorize(color)
+    |> Colors.colorize(color)
     |> then(&IO.write(device, &1))
+  end
+
+  @doc """
+  Prints `text` rendered in every bundled font, to help choose one.
+
+  Each font is preceded by a header with its name, ready to paste into
+  `print/2`, and its position, such as `font: :slant  (12/333)`.
+
+  Output pauses every `:page_size` fonts and waits for Enter to continue or
+  `q` to stop. Without a terminal to read from, as in a pipe or in CI, it
+  prints everything without pausing.
+
+  Fonts are read without being kept in the font cache, so running a showcase
+  does not leave every font in memory.
+
+  ## Options
+
+    * `:fonts` - the fonts to show, as accepted by `render/2`. Defaults to
+      every bundled font. Invalid fonts raise `ExBanner.Error` before anything
+      is printed.
+    * `:match` - only fonts whose name contains this text, ignoring case.
+    * `:page_size` - fonts per page. Defaults to `50`; `:infinity` never
+      pauses.
+    * `:width`, `:color` and `:device` - as in `print/2`.
+
+  ## Examples
+
+      ExBanner.showcase("Hello")
+      ExBanner.showcase("Hello", match: "small")
+      ExBanner.showcase("Hello", fonts: [:slant, :big, :doom], page_size: :infinity)
+
+  """
+  @spec showcase(String.t(), [showcase_option()]) :: :ok
+  def showcase(text, opts \\ []) when is_binary(text) and is_list(opts) do
+    with {:ok, width} <- fetch_width(opts),
+         :ok <- validate_showcase(opts) do
+      ExBanner.Showcase.run(text, width, opts)
+    else
+      {:error, reason} -> raise ExBanner.Error, reason: reason
+    end
   end
 
   @doc """
@@ -160,13 +209,24 @@ defmodule ExBanner do
     end
   end
 
-  defp colorize(output, nil), do: output
+  defp validate_showcase(opts) do
+    color = Keyword.get(opts, :color)
+    match = Keyword.get(opts, :match)
+    page_size = Keyword.get(opts, :page_size, 50)
 
-  defp colorize(output, color) do
-    if Colors.valid?(color) do
-      [color, output] |> Bunt.ANSI.format() |> IO.iodata_to_binary()
-    else
-      raise ArgumentError, "unknown color: #{inspect(color)}"
+    cond do
+      color != nil and not Colors.valid?(color) ->
+        raise ArgumentError, "unknown color: #{inspect(color)}"
+
+      match != nil and not is_binary(match) ->
+        raise ArgumentError, "expected :match to be a string, got: #{inspect(match)}"
+
+      page_size != :infinity and not (is_integer(page_size) and page_size > 0) ->
+        raise ArgumentError,
+              "expected :page_size to be a positive integer or :infinity, got: #{inspect(page_size)}"
+
+      true ->
+        :ok
     end
   end
 end

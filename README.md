@@ -20,7 +20,7 @@ ASCII art banners for Elixir applications.
 ```elixir
 def deps do
   [
-    {:exbanner, "~> 0.2"}
+    {:exbanner, "~> 0.3"}
   ]
 end
 ```
@@ -137,6 +137,7 @@ iex> ExBanner.render("Hello", font: :nope)
 | `render!(text, opts)` | The string, or raises `ExBanner.Error` |
 | `print(text, opts)` | `:ok`, raises on errors |
 | `show()` | Prints the startup banner, ignoring `mode: :off` and `:mix_tasks` |
+| `showcase(text, opts)` | `:ok`, after printing `text` in every font, page by page |
 | `fonts()` | The bundled font names |
 
 Options:
@@ -149,6 +150,22 @@ Options:
 | `:device` | `:stdio` | IO device, `print/2` only |
 
 Characters the font does not have are rendered without accents when possible (`ç` becomes `c`), and as `?` otherwise. They are never dropped silently.
+
+### Choosing a font
+
+`showcase/2` prints your text in every bundled font, each one under a header with its name ready to paste:
+
+```elixir
+iex> ExBanner.showcase("Hello")
+font: :"1row"  (1/333)
+...
+-- 50 of 333 fonts, Enter for more, q to quit --
+
+iex> ExBanner.showcase("Hello", match: "small")
+iex> ExBanner.showcase("Hello", fonts: [:slant, :doom, :big], page_size: :infinity)
+```
+
+It pauses every 50 fonts (`:page_size`), filters by name with `:match` or takes an explicit list with `:fonts`, and accepts `:width`, `:color` and `:device` like `print/2`. Without a terminal it prints everything without pausing. Fonts read by `showcase/2` are not kept in the font cache.
 
 ## Fonts
 

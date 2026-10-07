@@ -23,10 +23,10 @@ defmodule ExBanner.Fonts do
   @spec builtin() :: [atom()]
   def builtin, do: @builtin
 
-  @spec load(atom() | String.t()) :: {:ok, Font.t()} | {:error, term()}
-  def load(font) do
+  @spec load(atom() | String.t(), keyword()) :: {:ok, Font.t()} | {:error, term()}
+  def load(font, opts \\ []) do
     with {:ok, path} <- resolve(font) do
-      cached(path)
+      if Keyword.get(opts, :cache, true), do: cached(path), else: uncached(path)
     end
   end
 
@@ -80,16 +80,28 @@ defmodule ExBanner.Fonts do
     key = {__MODULE__, path}
 
     case :persistent_term.get(key, nil) do
-      nil -> read(path, key)
+      nil ->
+        with {:ok, font} <- read(path) do
+          :persistent_term.put(key, font)
+          {:ok, font}
+        end
+
+      font ->
+        {:ok, font}
+    end
+  end
+
+  defp uncached(path) do
+    case :persistent_term.get({__MODULE__, path}, nil) do
+      nil -> read(path)
       font -> {:ok, font}
     end
   end
 
-  defp read(path, key) do
+  defp read(path) do
     with {:ok, %File.Stat{size: size}} when size <= @max_size <- File.stat(path),
          {:ok, data} <- File.read(path),
          {:ok, font} <- Font.parse(data) do
-      :persistent_term.put(key, font)
       {:ok, font}
     else
       {:ok, %File.Stat{}} -> {:error, {:invalid_font, path, :too_large}}

@@ -48,3 +48,12 @@ O Mix não tem API pública para saber qual task está rodando. A implementaçã
 O código seguia a regra de não ter comentários nem `@doc`, o que deixava o HexDocs só com o README e as specs.
 
 - Situação (2026-10-06): resolvido. Exceção aprovada para este projeto e registrada no `CLAUDE.md`: `@moduledoc`, `@doc` e `@typedoc` na API pública, em inglês, com exemplos executados como doctest.
+
+### 7. Memória das fontes em cache
+
+Cada linha de glifo fica como lista de inteiros, e cada elemento de lista custa 16 bytes na BEAM. Medido em 2026-10-07: a `standard` ocupa 265 KB em cache e as 333 fontes juntas ocupariam 97 MB no `:persistent_term`, que nunca é liberado.
+
+- Situação: o `showcase/2` lê as fontes sem gravar no cache, então o caso de carregar todas não acontece mais. No uso normal (uma ou duas fontes) o custo é irrelevante.
+- Otimização opcional, não feita: guardar as linhas como string UTF-8 reduziria cerca de 3 vezes (`standard` de 265 KB para 87 KB; todas de 97 MB para 31 MB). Exige converter cada glifo em lista ao renderizar, ou reescrever o renderizador para binários. Parsear glifo sob demanda a partir do arquivo cru reduziria perto do tamanho do arquivo (cerca de 28 KB na `standard`), com bem mais complexidade.
+- Gatilho para retomar: alguém precisar de muitas fontes em memória ao mesmo tempo.
+

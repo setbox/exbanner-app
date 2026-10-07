@@ -23,6 +23,17 @@ defmodule ExBanner.Colors do
   def valid?(color) when is_atom(color), do: Map.has_key?(@names, Atom.to_string(color))
   def valid?(_color), do: false
 
+  @spec colorize(String.t(), atom() | nil) :: String.t()
+  def colorize(text, nil), do: text
+
+  def colorize(text, color) do
+    if valid?(color) do
+      [color, text] |> Bunt.ANSI.format() |> IO.iodata_to_binary()
+    else
+      raise ArgumentError, "unknown color: #{inspect(color)}"
+    end
+  end
+
   @spec sequence(atom()) :: String.t()
   def sequence(color) when is_atom(color) do
     [color]
