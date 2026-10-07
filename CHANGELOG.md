@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+- The official site is now https://setbox.com.br/oss/exbanner/. The package links and the documentation point to it.
+
 ## 0.3.0
 
 - `ExBanner.showcase/2` prints a text in every bundled font, page by page, to help choose one. Filters with `:fonts` and `:match`; pauses every `:page_size` fonts.

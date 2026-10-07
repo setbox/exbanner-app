@@ -1,7 +1,7 @@
 defmodule ExBanner.MixProject do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.3.1"
   @source_url "https://github.com/setbox/exbanner-app"
   @homepage_url "https://setbox.com.br/oss/exbanner/"
 
